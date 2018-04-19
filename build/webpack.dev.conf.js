@@ -62,11 +62,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       })
       //获取歌词
       app.get('api/lyric', function (req, res) {
-        var url = 'http://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric.fcg'
+        var url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric.fcg'
 
         axios.get(url, {
           headers: {
-            referer: `http://i.y.qq.com/v8/playsong.html?ADTAG=newyqq.song&songmid=${req.query.musicid}`,
+            referer: `https://y.qq.com/n/yqq/song/${req.query.musicid}.html`,
             host: 'c.y.qq.com'
           },
           params: req.query
